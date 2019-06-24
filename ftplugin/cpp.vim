@@ -1,4 +1,4 @@
-" This is essentially an adapted version of the cppman.vim script that is 
+" This is essentially an adapted version of the cppman.vim script that is
 " included with cppman. Authored by Wei-Ning Huang (AZ) <aitjcize@gmail.com>
 " and others.
 "
@@ -41,7 +41,7 @@ endfunction
 
 function! s:Rerender()
   if winwidth(0) != s:old_col
-    let s:old_col = winwidth(0) 
+    let s:old_col = winwidth(0)
     let save_cursor = getpos(".")
     call s:reload()
     call setpos('.', save_cursor)
@@ -134,7 +134,7 @@ function! s:Cppman(page)
 
   let b:current_syntax = "man"
 
-  let s:old_col = 0 
+  let s:old_col = 0
   autocmd VimResized * call s:Rerender()
 
   " Open page
@@ -142,7 +142,7 @@ function! s:Cppman(page)
   exec "0"
 endfunction
 
-command! -nargs=+ Cppman call s:Cppman(expand(<q-args>)) 
-setl keywordprg=:Cppman                                  
-setl iskeyword+=:,=,~,[,],*,!,<,>                        
+command! -nargs=+ Cppman call s:Cppman(expand(<q-args>))
+setl keywordprg=:Cppman
+"setl iskeyword+=:,=,~,[,],*,!,<,>
 
