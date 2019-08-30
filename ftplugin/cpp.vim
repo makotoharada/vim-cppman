@@ -80,7 +80,7 @@ function! s:Cppman(page)
     finish
   endif
 
-  syntax on
+ " syntax on
   syntax case ignore
   syntax match  manReference       "[a-z_:+-\*][a-z_:+-~!\*<>]\+([1-9][a-z]\=)"
   syntax match  manTitle           "^\w.\+([0-9]\+[a-z]\=).*"
